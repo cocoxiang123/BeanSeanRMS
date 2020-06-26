@@ -1,0 +1,56 @@
+﻿@model ReservationSystem.Models.Sitting
+
+@{
+    ViewData["Title"] = "Sitting";
+}
+
+<h4>Sitting</h4>
+@ViewBag.ErrorMessage
+<hr />
+<div class="row custom-form">
+    <div class="col-md-4">
+        <form asp-controller="Sitting" asp-action="AddSitting" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+
+                <label asp-for="Start" class="control-label"></label>
+                <input asp-for="Start" class="form-control" id="start" />
+                <span asp-validation-for="Start" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="End" class="control-label"></label>
+                <input asp-for="End" class="form-control" />
+                <span asp-validation-for="End" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity" class="control-label"></label>
+                <input asp-for="Capacity" class="form-control" placeholder="0" />
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SittingTypeId" class="control-label"></label>
+                <select asp-for="SittingTypeId" asp-items="@(new SelectList(ViewBag.SittingTypes,"Id","Description"))" class="form-control">
+                    <option value="">Please select SittingTypes</option>
+                </select>
+                <span asp-validation-for="SittingTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" type="checkbox" checked="checked"/>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-area="Admin" asp-controller="Sitting" asp-action="SittingList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

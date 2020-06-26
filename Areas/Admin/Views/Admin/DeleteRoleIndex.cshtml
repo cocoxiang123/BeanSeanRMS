@@ -1,0 +1,26 @@
+﻿@model IdentityRole
+@{
+    ViewData["Title"] = "DeleteRole";
+}
+
+<h4>Are you sure you want to delete this?</h4>
+<div class="row custom-form">
+    <form asp-action="DeleteRoleIndex" method="post">
+        <div class="form-group row">
+         <div class = "col-sm">
+            @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class = "col-sm">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+            
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" asp-for="Name" class="form-control" />
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-action="RoleIndex">Back to List</a>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,87 @@
+﻿@model Dictionary<Sitting, List<T4RMSSolution.Models.Table>>
+
+
+@*<h1>ControlPanelMain</h1>*@
+
+<p>
+    <a asp-action="ReservationIndex">Back to Index</a>
+</p>
+<div style="background:#ffffffaa">
+    <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Sitting Start Time
+                    </th>
+                    <th>
+                        Sitting Finish Time
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                    <th>
+                        Available Table  
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var i in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @i.Key.Start
+                        </td>
+                        <td>
+                            @i.Key.End
+                        </td>
+                        <td>
+                            @(i.Key.Status?"Open":"Close")
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" asp-action="Create" asp-route-id="@i.Key.SittingId">Create a New Reservation</a>
+                        </td>
+                        <td>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        Area(@(i.Value.Count.ToString()+" Left"))
+                                    </th>
+                                    <th>
+                                        Table Number
+                                    </th>
+                                    <th>
+                                        Seat Capacity
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var t in i.Value)
+                                {
+                                    <tr>
+                                        <td>@t.Location</td>
+                                        <td>@t.SubId</td>
+                                        <td>@t.Capacity</td>
+                                    </tr>
+                                }
+                                </tbody>
+                                
+                                
+                            </table>
+
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    
+
+</div>
+

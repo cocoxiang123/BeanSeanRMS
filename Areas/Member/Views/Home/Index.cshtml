@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Index-Member";
+}
+
+<div class="intro" id="intro">
+    <div class="intro-p text-center">
+        <div>Welcome @User.Identity.Name !</div>
+        <h1>Taste of Sydney</h1>
+        <h2>Sydney's Most Acclaimed Restaurant</h2>
+    </div>
+    <a class="btn btn-danger intro-button" asp-area="home" asp-controller="home" asp-action="booking">Booking Now</a>
+</div>

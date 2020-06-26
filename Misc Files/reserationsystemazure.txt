@@ -1,0 +1,11 @@
+database server
+admin:coco
+password:HCmiobv!.h
+
+
+
+website
+url:t4-rms-s120.azurewebsites.net
+
+cs:
+Server=tcp:t4rms.database.windows.net,1433;Initial Catalog=T4RMS;Persist Security Info=False;User ID=coco;Password=HCmiobv!.h;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;

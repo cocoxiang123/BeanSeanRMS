@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ReservationSystem.Models.SittingType>
+
+@{
+    ViewData["Title"] = "SittingTypeList";
+}
+
+<h4>SittingType</h4>
+
+<table class="table custom-list">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a asp-area="Admin" asp-controller="sitting" asp-action="EditType" asp-route-id="@item.Id" class="btn btn-danger">Edit</a> |
+                <a asp-area="Admin" asp-controller="sitting" asp-action="DetailType" asp-route-id="@item.Id" class="btn btn-danger">Details</a> |
+                <a asp-area="Admin" asp-controller="sitting" asp-action="DeleteType" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="AddSittingType" class="btn btn-danger">Create New</a>

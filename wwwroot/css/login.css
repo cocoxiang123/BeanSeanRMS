@@ -1,0 +1,191 @@
+﻿:root {
+    --primaryColor: #7D1917;
+    --transitColor: rgba(255,255,255,0.8);
+    --secondarytransitColor: rgba(255,255,255,0.3);
+    --hoverColor: #A9965F;
+}
+
+.login-form a {
+    text-decoration: none;
+    color: orange;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+
+    .login-form a:hover {
+        color: gold;
+    }
+
+.login-form {
+    /*background: rgba(19, 35, 47, 0.9);*/
+    background: rgba(255,111,97,0.9);
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.tab-group {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+    .tab-group:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .tab-group li a {
+        display: block;
+        text-decoration: none;
+        padding: 15px;
+        background: rgba(160, 179, 176, 0.25);
+        color: #000;
+        font-size: 20px;
+        float: left;
+        width: 50%;
+        text-align: center;
+        cursor: pointer;
+        -webkit-transition: 0.5s ease;
+        transition: 0.5s ease;
+    }
+
+        .tab-group li a:hover {
+            background: darkgoldenrod;
+            color: #ffffff;
+        }
+
+    .tab-group .active a {
+        background: var(--primaryColor);
+        color: #ffffff;
+    }
+
+
+
+.login-form h1 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 300;
+    margin: 0 0 40px;
+}
+
+.login-form label {
+    text-align: left;
+    color: gold;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    -webkit-backface-visibility: hidden;
+    pointer-events: none;
+    font-size: 16px;
+}
+
+    .login-form label .req {
+        margin: 2px;
+        color: var(--primaryColor);
+    }
+
+    .login-form label.active {
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+        left: 2px;
+        font-size: 14px;
+    }
+
+        .login-form label.active .req {
+            opacity: 0;
+        }
+
+    .login-form label.highlight {
+        color: #ffffff;
+    }
+
+.login-form input,
+.login-form textarea {
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    background: #fff;
+    background-image: none;
+    border: none;
+    color: #000;
+    border-radius: 0;
+    -webkit-transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+    .login-form input:focus,
+    .login-form textarea:focus {
+        outline: 0;
+        border-color: var(--primaryColor);
+    }
+
+.login-form textarea {
+    border: 2px solid #a0b3b0;
+    resize: vertical;
+}
+
+.field-wrap {
+    position: relative;
+    margin-bottom: 40px;
+    text-align:left;
+}
+
+.top-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.top-row > div {
+    float: left;
+    width: 48%;
+    margin-right: 4%;
+}
+
+    .top-row > div:last-child {
+        margin: 0;
+    }
+
+.login-form .button {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: #FFaa00;
+    color: #ffffff;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-appearance: none;
+}
+
+    .login-form .button:hover, .login-form .button:focus {
+        background: gold;
+    }
+
+.button-block {
+    display: block;
+    width: 100%;
+}
+
+.new {
+    margin-top: -20px;
+    text-align: right;
+    color:#fff;
+    
+}
+    .new a {
+        color: #fff;
+        text-decoration:underline;
+    }
+        .new a:hover {
+            color: orange;
+        }

@@ -1,0 +1,37 @@
+﻿@model List<UserViewModel>
+@{
+    ViewData["Title"] = "UserRoleIndex";
+}
+
+<h4>UserRoleIndex</h4>
+
+<table class="table custom-list">
+    <thead>
+        <tr>
+            <th>
+                User Id
+            </th> 
+            <th>
+                User Name
+            </th>            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => r.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => r.Name)
+                </td>                
+
+            </tr>
+        }
+</table>
+<a asp-action="AssignUser" asp-route-id="@ViewBag.Id" class="btn btn-danger">Manage User</a>
+<p>
+    <a asp-action="RoleIndex">Back</a>
+</p>

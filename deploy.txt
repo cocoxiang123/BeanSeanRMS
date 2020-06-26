@@ -1,0 +1,6 @@
+t4rmsdatabase.database.windows.net
+password:Admin123**
+
+https://t4rms.azurewebsites.net/
+
+Server=tcp:t4rmsdatabase.database.windows.net,1433;Initial Catalog=Reservation;Persist Security Info=False;User ID=coco;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;

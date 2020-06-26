@@ -1,0 +1,84 @@
+﻿
+@using T4RMSSolution.Models
+@model T4RMSSolution.ViewModels.ReservationControlViewModel
+
+@{
+    ViewData["Title"] = "ControlPanelFloorMain";
+}
+
+<h1>ControlPanelFloorMain</h1>
+
+
+<p>
+    <a asp-action="ControlPanelFloor">Choose other time</a>
+</p>
+<table class="table" style="background: #fff">
+    <thead>
+        <tr>
+            <th>
+                Table
+            </th>
+            <th>
+                Sitting information
+            </th>
+            <th>
+                ReservationType
+            </th>
+            <th>
+                Customer
+            </th>
+            <th>
+                Guests
+            </th>
+            <th>
+                Booking Time
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Notes
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Reservations)
+        {
+            <tr>
+
+                <td>
+                    @item.Table.Location@item.Table.SubId
+                </td>
+
+                <td>
+                    @("Start: ") @item.Sitting.Start@(" End " )@item.Sitting.End.Hour
+                </td>
+                <td>
+                    @item.ReservationType.Description
+                </td>
+                <td>
+                    @(item.Customer.FirstName + " ")@item.Customer.LastName
+                </td>
+                <td>
+                    @item.Guests
+                </td>
+                <td>
+                    @item.DateTime
+                </td>
+                <td>
+                    @item.Notes
+                </td>
+                <td>
+                    @item.Status.Description
+                </td>
+                <td>
+                    <a asp-action="HandleSeated" asp-route-id="@item.Id" class="btn btn-primary">Seated</a>
+                    <a asp-action="HandleComplete" asp-route-id="@item.Id" class="btn btn-primary">Complete</a>
+                    <a asp-action="HandleCancel" asp-route-id="@item.Id" class="btn btn-primary">Cancel</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ReservationSystem.Models.Sitting>
+
+@{
+    ViewData["Title"] = "SittingList";
+}
+<h4>SittingList</h4>
+
+
+<table class="table custom-list">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SittingType.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Start)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.End)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <form asp-action="SittingItemDelete" asp-route-id="@item.SittingTypeId" method="post">
+            <tr>
+                <td style="text-transform:capitalize">
+                    @Html.DisplayFor(modelItem => item.SittingType.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Start)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.End)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+
+
+                <td>
+                    @*<a asp-area="" asp-controller="Sitting" asp-action="EditItemList" asp-route-id="@item.SittingType.Description" class="btn btn-danger">Edit</a>*@
+                    <a asp-area="" asp-controller="Sitting" asp-action="SittingList" asp-route-id="@item.SittingType.Description" class="btn btn-danger">Details</a> |
+                    <input type="submit" onclick="return confirm(' (Warnning! Reservation may be effectived) Are you sure you want to delete @item.SittingType.Description ? ')" class="btn btn-danger" value="Delete">
+
+                </td>
+            </tr>
+        </form>
+        }
+    </tbody>
+</table>
+
+
+<a asp-controller="Sitting" asp-action="AddSitting" class="btn btn-danger">Create New</a>
+

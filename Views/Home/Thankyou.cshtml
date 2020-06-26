@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Thankyou";
+}
+    <div class="confirmation">
+        <h4 class="thankyou">Thank you for booking. We'll send you a conformation email soon.</h4>
+    </div>
+@if (User.IsInRole("Member"))
+{
+    <a asp-area="member" asp-controller="home" asp-action="MyOrder">View Booking</a>
+}
+

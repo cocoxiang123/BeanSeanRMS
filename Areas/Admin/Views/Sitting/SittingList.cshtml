@@ -1,0 +1,123 @@
+﻿@model IEnumerable<ReservationSystem.Models.Sitting>
+
+@{
+    ViewData["Title"] = "SittingList";
+}
+<h4 class="mt-3">SittingList</h4>
+
+<div class="d-flex justify-content-between flex-row-reverse mt-3">
+
+    <div>
+        <input type="button" class="btn btn-danger" value="Delete selected Items" id="delete" />
+        <a asp-controller="Sitting" asp-action="AddSitting" class="btn btn-danger">Create New</a>
+    </div>
+    <form asp-controller="Sitting" asp-action="SittingList" method="get">
+        <p class="text-white mt-3">
+            <input type="text" name="SearchString">
+            <input type="submit" value="Search"  class="btn btn-danger"/>
+        </p>
+    </form>
+</div>
+
+<table class="table custom-list">
+    <thead>
+        <tr>
+            <th>
+                <input type="checkbox" id="checkAll" />
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Start)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.End)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SittingType.Description)
+            </th>
+            <th>
+                Sitting Status
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            @*<form asp-action="Delete" asp-route-id="@item.SittingId" method="post">*@
+
+            <tr>
+                <td>
+                    <input type="checkbox" value="@item.SittingId" class="checkBox" />
+                </td>
+                <td>
+                    @{var date = item.Start.ToString("d");}
+                    @Html.DisplayFor(modelItem => date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Start)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.End)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SittingType.Description)
+                </td>
+                <td>
+                    @(item.Status ? "Reservation Open" : "Reservation Closed ")
+                </td>
+                <td>
+                    <a asp-area="admin" asp-controller="sitting" asp-action="Edit" asp-route-id="@item.SittingId">Edit</a>
+                </td>
+            </tr>
+            @*</form>*@
+        }
+    </tbody>
+</table>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+
+            $("#checkAll").click(function () {
+                $(".checkBox").prop('checked',
+                    $(this).prop('checked'));
+            });
+
+            $("#delete").click(function () {
+                var selectedIDs = new Array();
+                $('input:checkbox.checkBox').each(function () {
+                    if ($(this).prop('checked')) {
+                        selectedIDs.push($(this).val());
+                    }
+                });
+                $.ajax({
+                    url: "/Admin/Sitting/DeleteSelectedItems",
+                    type: 'POST',
+                    data: JSON.stringify(selectedIDs),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function(msg) {
+                        alert(msg);
+                        window.location.reload();
+
+                    },
+                    error: function() {
+                        alert("Error while deleting the records!");
+
+                    }
+                });
+
+            });
+        });
+    </script>
+
+    }

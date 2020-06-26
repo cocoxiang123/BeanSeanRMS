@@ -1,0 +1,347 @@
+﻿:root {
+    --primaryColor: #7D1917;
+    --transitColor: rgba(255,255,255,0.8);
+    --secondarytransitColor: rgba(255,255,255,0.3);
+    --hoverColor: #A9965F;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background: url(../picture/background.jpg) no-repeat center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    
+}
+.container-fluid{
+   padding-left:0px;
+   padding-right:0px;
+}
+/*main*/
+.main-body {
+    text-align: center;
+    min-height: 400px;
+}
+
+.custom-list {
+    border: 5px solid #fff;
+    color: #011A39;
+    font-size: 1.2rem;
+    background-color: var(--transitColor);
+}
+
+.custom-form {
+    background-color: var(--secondarytransitColor);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: #011A39;
+    font-size: 1.2rem;
+    border: 5px solid #fff;
+    margin: 20px;
+}
+
+    .custom-form input[type="submit"] {
+        background-color: var(--primaryColor);
+    }
+h1{
+    color:#fff;
+}
+h2{
+    padding:5px;
+}
+h4 {
+    color: #fff;
+    font-size: 2rem;
+    margin:10px;
+    width:100%;
+    text-align:center;
+}
+.btn-danger {
+    background-color: var(--primaryColor);
+}
+/*end of main*/
+nav {
+    position: relative;
+    background-color: var(--primaryColor);
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 50px;
+    top: 0px;
+}
+
+#navbarNav {
+    padding-left: 250px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.navbar-nav li {
+    padding: 5px 10px;
+}
+
+.nav-item a, .drop-down a {
+    color: #fff;
+    font-size: 1.6rem;
+    text-decoration: none;
+    
+}
+
+    .nav-item a:hover, .drop-down a:hover {
+        color: #A9965F;
+        text-decoration: none;
+        border-top-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+        background-color: #000;
+        transition: all 0.3s linear;
+        padding: 6px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        margin-top:4px;
+    }
+
+/*login*/
+.nav-link{
+    color:#fff;
+}
+.hello{
+    font-size:1.2rem;
+    color:#fff;
+   
+}
+/*logout*/
+.log-out{
+    padding-top:5px;
+    font-size:1rem;
+    padding-left:0;
+    margin-left:0;
+}
+/*intro*/
+.intro {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.intro-p {
+    margin-top:100px;
+    color: #fff;
+}
+    .intro-p h1 {
+        font-size: 72px;
+    }
+
+    .intro-p h2 {
+        font-size: 36px;
+    }
+
+.intro-button {
+    margin: 150px auto;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: var(--primaryColor);
+    border: 1px solid var(--primaryColor);
+    padding: 10px 15px;
+}
+.intro-menu{
+    display:grid;
+    grid-template-columns:40% 60%;
+}
+/*about*/
+.about {
+    min-height: 80vh;
+    background-color: var(--transitColor);
+    border: 5px solid var(--primaryColor);
+    margin-bottom:50px;
+    margin-top:20px;
+}
+.about-line {
+    background-color: var(--primaryColor);
+    width: 200px;
+    height: 5px;
+    margin: 50px;
+}
+.about-container{
+    padding:80px;
+    font-size:1.3rem;
+}
+/*booking*/
+.booking {
+    min-height: 55vh;
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+.booking-container{
+margin:50px;
+padding-top:50px;
+}
+.booking-container h2{
+    color:#fff;
+}
+.booking-main{
+    margin-top:30px;
+    margin-left:60px;
+}
+
+.booking-form {
+    padding-right: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 10px;
+    grid-column-gap: 20px;
+    margin-top:30px;
+}
+option:first-child {
+    display: none;
+}
+.booking-book{
+    padding:5px 100px;
+    background-color:#000;
+}
+.booking-form label {
+    color: black;
+    font-size:20px;
+}
+.booking-form input {
+    border: 1px solid black;
+    
+    height:2rem;
+}
+.booking-form input:focus{
+    border:1px solid gold;
+}
+#res-button {
+    font-size: 22px;
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top:10px;
+    background-color: black;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-appearance: none;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+    #res-button:active, #res-button:visited, #res-button:hover {
+        border: none;
+    }
+    .booking-form input::placeholder {
+        font-size: 18px;
+        padding: 5px;
+        margin:5px;
+    }
+.confirmation {
+    min-height: 55vh;
+    background-color: var(--transitColor);
+    margin-top:50px;
+}
+.thankyou{
+    color:#000;
+    padding-top:150px;
+    font-size:28px;
+}
+/*reservation*/
+.special-request:hover {
+    cursor: pointer;
+}
+.reservation-button {
+    
+}
+
+/*footer*/
+footer {
+    bottom: 0;
+    width: 100%;
+    background: var(--primaryColor);
+    color:#fff;
+    font-size: 1rem;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    padding: 30px 50px;
+    grid-column-gap:20px;
+}
+
+.rights {
+    padding: 5px 50px;
+}
+
+/*admin*/
+.admin-home{
+    padding:100px 0;
+}
+@media screen and (max-width:996px) {
+    .logo {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 30px;
+        top: 5px;
+    }
+    .nav-item {
+        margin-left: 5px;
+        color: #fff;
+    }
+
+    #navbarNav {
+        padding: 0px;
+        text-align: center;
+    }
+
+    .nav-item a:hover, .drop-down a:hover {
+        padding-left: 0px;
+        padding-right: 2px;
+    }
+    .intro-p h1 {
+        font-size: 46px;
+    }
+    #res-button {
+        font-size: 22px;
+        width:120px;
+        margin-left:0px;
+        margin-right: 50px;
+    }
+
+}
+@media screen and (max-width:420px){
+    .logo {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    #navbarNav{
+        text-align:center;
+        padding-left:0px;
+    }
+    .nav-item a, .drop-down a {
+        color: #fff;
+        font-size: 1.4rem;
+    }
+    #res-button {
+        font-size: 22px;
+        margin-left: 0px;
+        margin-right: 50px;
+    }
+    .booking-container{
+        margin:0px;
+    }
+}

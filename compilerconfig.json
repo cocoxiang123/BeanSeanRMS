@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "wwwroot/scss/_bootswatch.css",
+    "inputFile": "wwwroot/scss/_bootswatch.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/_variables.css",
+    "inputFile": "wwwroot/scss/_variables.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Canlander.css",
+    "inputFile": "wwwroot/css/Canlander.less"
+  }
+]

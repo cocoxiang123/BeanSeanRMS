@@ -1,0 +1,7 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Management - Home- Index</h1>
+

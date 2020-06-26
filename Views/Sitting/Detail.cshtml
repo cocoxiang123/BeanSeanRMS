@@ -1,0 +1,40 @@
+﻿@model ReservationSystem.Models.Sitting
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div>
+    <h4>Sitting Detail</h4>
+    <hr />
+    <dl class="row custom-list">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Start)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Start)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.End)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.End)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SittingType.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SittingType.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-controller="Sitting" asp-action="Edit" asp-route-id="@Model.SittingId">Edit</a> |
+    <a asp-controller="Sitting" asp-action="SittingItems">Back to List</a>
+</div>

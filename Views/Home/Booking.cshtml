@@ -1,0 +1,164 @@
+﻿@model ReservationCreatViewModelClient
+@{
+    ViewData["Title"] = "Booking";
+}
+
+<div class="booking" id="booking">
+    <div class="booking-container text-center">
+        <h2 id="title">Make Reservation</h2>
+        <span style="color:red;font-weight:bold">
+            @ViewBag.ErrorMessage</span>
+                <form class="booking-form" asp-controller="Home" asp-action="Booking">
+                    <div class="d-flex flex-column flex-lg-row booking-main">
+                        <div class="d-flex flex-column text-left">
+                            <label class="font-weight-bold" id="lab_DateTime">Date&Time</label>
+                            @*<input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />*@
+                            <input asp-for="DateTime" class="textbox-n mr-5 datetime" id="dateTime" style="width:88%" />
+                            <span asp-validation-for="DateTime" class="text-danger warning"></span>
+                        </div>
+                        <div class="d-flex flex-column text-left" style="margin-right:80px;">
+                            <label class="font-weight-bold" id="lab_Guests">Guests</label>
+                            @*<input placeholder="Time" class="textbox-n" type="text" onfocus="(this.type='time')" onblur="(this.type='text')" id="time" />*@
+                            <input asp-for="Guests" class="textbox-n" id="guest" placeholder="* Number of Guests" style="width:120%" />
+                            <span asp-validation-for="Guests" class="text-danger warning"></span>
+                        </div>
+                        <div class="d-flex flex-column text-left" style="margin-right:80px;">
+                            <label class="font-weight-bold" id="lab_Duration">Duration</label>
+                            <input asp-for="Duration" class="textbox-n " placeholder="* Hour" id="duration" style="width:120%" />
+                            <span asp-validation-for="Duration" class="text-danger warning"></span>
+                        </div>
+                        <div>
+                            <a href="" class="btn btn-dark btn-sm btn-rounded my-4 ml-sm-3" id="res-button" data-toggle="modal" data-target="#modalLoginForm">
+                                Book
+                            </a>
+                        </div>
+                    </div>
+                    @*booking button modal*@
+                    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header text-center ">
+                                    <h5 class="modal-title w-100 font-weight-bold text-dark pl-4">Reservation</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span class="bg-white" aria-hidden="true" style="font-size:30px;">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body mx-3">
+                                    <div class="md-form text-left">
+                                        <p class="text-muted">Reservation Details</p>
+                                        <p class="mb-2" id="chose"></p>
+                                        <p class="mb-2" id="chose2"></p>
+                                        <p class="mb-2" id="chose3"></p>
+                                    </div>
+                                    <hr style="color:red" />
+                                    <div class="booking-form">
+                                        <div class="md-form mb-4 d-flex flex-column text-left">
+                                            <label class="font-weight-bold" id="lab_firstname">First Name</label>
+                                     
+                                            <input asp-for="FirstName" type="text" id="defaultForm-pass" class="form-control validate" >
+                                            <span asp-validation-for="FirstName" class="text-danger  warning"></span>
+                                        </div>
+                                        <div class="md-form mb-4 d-flex flex-column text-left">
+                                            <label class="font-weight-bold" id="lab_lastname">Last Name</label>
+                                            <input asp-for="LastName" type="text" id="defaultForm-pass" class="form-control validate ">
+                                            <span asp-validation-for="LastName" class="text-danger warning"></span>
+                                        </div>
+
+                                
+                                    <div class="md-form mb-4 d-flex flex-column text-left">
+                                        <label class="font-weight-bold" id="lab_email">Email</label>
+                                        <input asp-for="Email" type="email" id="defaultForm-email" class="form-control validate">
+                                        <span asp-validation-for="Email" class="text-danger warning"></span>
+                                    </div>
+                                    <div class="md-form mb-4 d-flex flex-column text-left">
+                                        <label class="font-weight-bold" id="lab_phone">Phone</label>
+                                        <input asp-for="PhoneNumber" id="defaultForm-email" class="form-control validate " >
+                                        <span asp-validation-for="PhoneNumber" class="text-danger  warning"></span>
+                                    </div>
+                                    </div>
+                              
+                                    <div class="md-form">
+                                        <p class="special-request text-left"><bold>+</bold>Special Requests</p>
+                                        <textarea asp-for="Notes" type="text" id="form8" class="md-textarea form-control special-request-area" rows="4" placeholder="Add your special requests here. We'll do our best to accommodate it"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer d-flex justify-content-center">
+                                    <button class="btn btn-dark btn-lg booking-book" id="bookButton">Confirm</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+</div>
+</div>
+
+@section Scripts {
+    <script>
+ function formatDate(dateVal) {
+    var newDate = new Date(dateVal);
+    var sMonth = newDate.getMonth() + 1;
+    var sDay = newDate.getDate();
+    var sYear = newDate.getFullYear();
+    var sHour = newDate.getHours();
+    var sMinute = newDate.getMinutes();
+    var sAMPM = "AM";
+
+    var iHourCheck = parseInt(sHour);
+
+    if (iHourCheck > 12) {
+        sAMPM = "PM";
+        sHour = iHourCheck - 12;
+    }
+
+     return sDay + "-" + sMonth + "-" + sYear + " " + sHour + ":" + sMinute + " " + sAMPM;
+}
+        $(document).ready(function () {
+            $(".special-request-area").hide();
+            $(".special-request").click(function () {
+                $(".special-request-area").show();
+                $(".special-request").hide();
+            })
+
+            $("#res-button").click(function () {
+                var dateTime = formatDate($("#dateTime").val());
+                console.log($("#dateTime").val());
+                var guest = $("#guest").val();
+                var duration = $("#duration").val();
+                if ($("#dateTime").val()) {
+                    $("#chose").text("DateTime: " + dateTime).css("color","black");
+                }
+                else {
+                     $("#chose").text("DateTime: Please choose your time ").css("color","#ff726f");
+                }
+               
+               if (guest>1) {
+                    $("#chose2").text("Guests: " + guest +" people").css("color","black");
+               }
+                else if (guest<=1&& guest>0) {
+                    $("#chose2").text("Guest: " + guest +" person").css("color","black");
+               }
+                else {
+                     $("#chose2").text("Guest: Please enter guest number").css("color","#ff726f");
+                }             
+                if (duration>1 ) {                   
+                    $("#chose3").text("Duration: " + duration +" Hours").css("color","black");
+                }
+                else if (duration<=1 && duration > 0) {                   
+                    $("#chose3").text("Duration: " + duration +" Hour").css("color","black");
+                }
+                else {
+                     $("#chose3").text("Duration: Please enter duration time").css("color","#ff726f");
+                }
+              
+            })
+           
+        })
+
+    </script>
+}
+

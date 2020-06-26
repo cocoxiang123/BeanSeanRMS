@@ -1,0 +1,122 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="form login-form">
+    <div class="tab-content">
+        <div id="signup">
+            <h1>Sign Up for Free</h1>
+
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div class="top-row">
+
+                    <div class="field-wrap">
+                        <label>
+                            First Name<span class="req">*</span>
+                        </label>
+                        <input type="text" required autocomplete="off" asp-for="Input.FirstName" />
+                        <span asp-validation-for="Input.FirstName" class="text-white"></span>
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>
+                            Last Name<span class="req">*</span>
+                        </label>
+                        <input type="text" required autocomplete="off" asp-for="Input.LastName" />
+                        <span asp-validation-for="Input.LastName" class="text-white"></span>
+                    </div>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Email Address<span class="req">*</span>
+                    </label>
+                    <input type="email" required autocomplete="off" asp-for="Input.Email" />
+                    <span asp-validation-for="Input.Email" class="text-white"></span>
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Phone number<span class="req">*</span>
+                    </label>
+                    <input required autocomplete="off" asp-for="Input.Phone" />
+                    <span asp-validation-for="Input.Phone" class="text-white"></span>
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Set A Password<span class="req">*</span>
+                    </label>
+                    <input type="password" required autocomplete="off" asp-for="Input.Password" />
+                    <span asp-validation-for="Input.Password" class="text-white"></span>
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Comfirm Password<span class="req">*</span>
+                    </label>
+                    <input type="password" required autocomplete="off" asp-for="Input.ConfirmPassword" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-white"></span>
+                </div>
+                <p class="new">
+                    Already a member?
+                    <a class="ml-2" asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Sign in</a>
+                </p>
+                <button type="submit" class="button button-block">Get Started</button>
+
+            </form>
+
+        </div>
+
+
+    </div>
+
+</div> 
+@*<div class="row d-flex justify-content-center align-items-center" >
+
+        <div class="col-md-6 custom-form">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post" >
+
+                <h4>Create a new account</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.FirstName" ></label>
+                    <input asp-for="Input.FirstName" class="form-control" />
+                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.LastName" ></label>
+                    <input asp-for="Input.LastName" class="form-control" />
+                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Phone" ></label>
+                    <input asp-for="Input.Phone" class="form-control" />
+                    <span asp-validation-for="Input.Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <input asp-for="Input.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <p>Already a member?<a class="ml-2" asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Sign in</a></p>
+                </div>
+                <button type="submit" class="btn btn-danger">Register</button>
+            </form>
+        </div>
+    </div>*@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

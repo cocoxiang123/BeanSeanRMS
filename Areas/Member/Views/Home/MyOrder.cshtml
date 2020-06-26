@@ -1,0 +1,28 @@
+﻿@model ReservationSystem.Models.Customer
+@{
+    ViewData["Title"] = "My Bookings";
+}
+<h4>@ViewData["Title"]</h4>
+<div class="row custom-list">
+    <table class="table ">
+        <thead>
+            <tr>
+                <th>Id</th><th>Date/Time</th><th>Guests</th><th>Status</th><th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        @foreach (var r in Model.Reservations)
+        { var i = 1;
+            <tr>
+                <td>@i</td>
+                <td>@r.DateTime</td>
+                <td>@r.Guests</td>
+                <td>@r.Status.Description</td>
+                <td>@r.ReservationType.Description</td>
+            </tr>
+            i++;
+        }
+        </tbody>
+    </table>
+</div>

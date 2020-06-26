@@ -1,0 +1,77 @@
+Debugging in MyOrder
+Number of bookings=ReservationSystem.Models.Customer
+Debugging in MyOrder
+Number of bookings=ReservationSystem.Models.Customer
+Debugging in MyOrder
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: member@gmail.com
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: member@gmail.com
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: customer email:
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: customer email:
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: member@gmail.com
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: member@gmail.com
+Customer Identity=member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 12:00:00 AMmember@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 12:00:00 AMmember@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: Customer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: Customer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: Customer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: Customer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 9:55:13 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 9:55:27 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:05:14 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:13:30 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:14:17 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:15:43 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:19:56 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:20:57 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:34:47 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:34:59 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:36:32 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:36:34 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:38:45 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:42:13 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:44:10 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:44:21 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:44:38 AMCustomer Email :member@gmail.com
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 9/06/2020 10:45:18 AMCustomer Email :member@gmail.com
+Debugging in MyOrder
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 10/06/2020 4:45:15 PMCustomer Email :member@gmail.com
+Customer Identity=member@gmail.com
+Debugging in MyOrder
+ReservationSystem.Areas.Member.Controllers.HomeController: Information: 10/06/2020 8:56:11 PMCustomer Email :member@gmail.com
+Customer Identity=member@gmail.com

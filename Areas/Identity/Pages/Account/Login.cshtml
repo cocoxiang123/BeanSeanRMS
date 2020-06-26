@@ -1,0 +1,47 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+<div class="form login-form">
+    <div class="tab-content">      
+        <div id="login">
+            <h1>Welcome Back!</h1>
+
+            <form  method="post" id="account">
+
+                <div class="field-wrap">
+                    <label>
+                        Email Address<span class="req">*</span>
+                    </label>
+                    <input type="email" asp-for="Input.Email" required />
+                    <span asp-validation-for="Input.Email" class="text-white"></span>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Password<span class="req">*</span>
+                    </label>
+                    <input type="password" asp-for="Input.Password" required autocomplete="off" />
+                    <span asp-validation-for="Input.Password" class="text-white"></span>
+                </div>
+
+                <p class="new">
+                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                </p>
+
+                <button type="submit" class="button button-block" >Log In</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+}

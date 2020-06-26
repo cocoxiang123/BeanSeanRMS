@@ -1,0 +1,83 @@
+﻿@using System.Linq
+@using T4RMSSolution.Models
+@model IEnumerable<ReservationSystem.Models.Reservation>
+@{
+    ViewData["Title"] = "HandlePending";
+}
+
+<h1>HandlePending</h1>
+
+
+<table class="table" style="background: #ffffffaa">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Table)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Sitting)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Guests)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                Confirm
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Table.Location@item.Table.SubId@(" Seat")@item.Table.Capacity
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sitting.SittingId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservationType.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Guests)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.Description)
+                </td>
+                <td>
+                    <a asp-action="HandleConfirm" asp-route-id="@item.Id" class="btn btn-primary">Confirm</a>
+
+                </td>
+                <td>
+                    <a asp-action="HandleCancel" asp-route-id="@item.Id" class="btn btn-primary">Cancel</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,83 @@
+﻿
+@using T4RMSSolution.Models
+@model IEnumerable<ReservationSystem.Models.Reservation>
+
+@{
+    ViewData["Title"] = "ReservationIndex";
+}
+
+<h1>Reservation</h1>
+<p>
+    <a asp-action="ControlPanel">Create New Reservation</a>
+</p>
+<p>
+    <a asp-action="HandlePending">Pending List</a>
+</p>
+<p>
+    <a asp-action="ControlPanelFLoor">Reservation Control</a>
+</p>
+<table class="table custom-list" >
+    <thead>
+        <tr>
+            <th>
+                Sitting
+            </th>
+            <th>
+                Reservation type
+            </th>
+            <th>
+                Customer
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Guests)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                Table Number
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                Status
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sitting.Start)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationType.Description)
+            </td>
+            <td>
+                @item.Customer.FirstName@(" ")@item.Customer.LastName
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Guests)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTime)
+            </td>
+            <td>
+               @(item.Table.Location+item.Table.SubId+"Seat"+ item.Table.Capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.Description)
+            </td>
+            <td>
+                <a asp-action="UpdateReservation" asp-route-id="@item.Id">Edit Reservation</a> |
+                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+                <a asp-action="DeleteReservation" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

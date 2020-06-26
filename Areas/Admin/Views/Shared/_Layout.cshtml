@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Member</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/client.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/simple-chart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/picture/logo.png" class="logo" /></a>
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reservations</a>
+                            <div class="dropdown-menu">
+                                <a asp-area="Admin" asp-controller="Reservation" asp-action="ControlPanel" class="dropdown-item text-warning">Make Reservations</a>
+                                <a asp-area="Admin" asp-controller="Reservation" asp-action="ReservationIndex" class="dropdown-item text-warning">Check Reservations</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage</a>
+                            <div class="dropdown-menu">
+                                <a asp-area="admin" asp-controller="Sitting" asp-action="SittingList" class="dropdown-item text-warning">Sitting</a>
+                                <a asp-area="admin" asp-controller="Sitting" asp-action="SittingTypeList" class="dropdown-item text-warning">SittingType</a>
+                                <a asp-area="Admin" asp-controller="Reservation" asp-action="TableIndex" class="dropdown-item text-warning">Tables</a>
+                                <a asp-area="Admin" asp-controller="Admin" asp-action="RoleIndex" class="dropdown-item text-warning">Accounts</a>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-area="Admin" asp-controller="home" asp-action="Report">Report</a>
+                    </li>
+                </ul>
+                
+                <partial name="_LoginPartial" />
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid main-body" >
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+    <footer id="contact">
+        <div class="content">
+            <div>
+                <h3>Address</h3>
+                <p>300 George St,Sydney 2000,Australia</p>
+            </div>
+            <div>
+                <h3>Opening hours</h3>
+                <p>Mon-Sun: 8am-10am,11am-2pm,4pm-9pm</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>
+                    <span>+421 000 000</span>
+                    <br />
+                    <span>hcarestaurant@gmail.com</span>
+                </p>
+            </div>
+            <div>
+                <h3>Follow</h3>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook-official" style="font-size:30px;margin-left:10px"></i></a>
+                <a href="https://www.instagram.com/">
+                    <i class="fa fa-instagram" style="font-size:30px;margin-left:10px"></i>
+                </a>
+            </div>
+        </div>
+        <div class="rights">©2020 by HCA's Restaurant.</div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

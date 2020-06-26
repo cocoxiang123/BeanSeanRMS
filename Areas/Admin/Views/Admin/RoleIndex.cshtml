@@ -1,0 +1,42 @@
+﻿@model IEnumerable<IdentityRole>
+@{
+    ViewData["Title"] = "RoleIndex";
+}
+
+<h4>RoleIndex</h4>
+<table class="table custom-list">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => r.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => r.Name)
+                </td>
+                <td>
+
+                    <a asp-action="UserRoleIndex" asp-route-id="@r.Id" class="btn btn-danger">UserIn role</a>
+                    <a asp-action="DeleteRoleIndex" asp-route-id="@r.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+</table>
+<div class="form-group">
+    <a  class="btn btn-danger" asp-action="CreateRole">Create New role</a>
+</div>
+<p>
+    <a asp-action="Index">Back</a>
+</p>

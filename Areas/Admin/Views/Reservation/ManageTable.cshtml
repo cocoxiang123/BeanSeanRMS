@@ -1,0 +1,41 @@
+﻿@model T4RMSSolution.ViewModels.TableCreateViewModel
+@{
+    ViewData["Title"] = "ManageTable";
+}
+
+<h1>AddTable</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4 custom-form m-sm-auto">
+        <form asp-action="ManageTable">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TableCapacity" class="control-label"></label>
+                <input asp-for="TableCapacity" class="form-control" />
+                <span asp-validation-for="TableCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

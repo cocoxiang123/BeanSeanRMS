@@ -1,0 +1,74 @@
+﻿@using T4RMSSolution.Models
+@model ReservationCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+    var t = Model.Tables.Select(t => new { TableId = t.Id, TableName = t.Location + t.SubId.ToString() + "Seat" + t.Capacity.ToString() });
+}
+
+@ViewBag.ErrorMessage
+<h4>Create Reservation</h4>
+<p>
+    <a asp-area="Admin" asp-controller="Reservation" asp-action="ManageTable">Generate Tables</a>
+    <a asp-action="ManageReservationStatus">Generate Status</a>
+</p>
+<hr />
+<div class="row custom-form">
+    <div class="col-md-4 ">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="SittingId" hidden="hidden" />
+            <div class="form-group">
+                <label class="control-label">ReservationType</label>
+                <select asp-for="ReservationTypeId" class="form-control" asp-items="@(new SelectList(Model.ReservationTypes, "Id","Description"))"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Table number</label>
+                <select asp-for="TableId" class="form-control" asp-items="@(new SelectList(t, "TableId","TableName"))"></select>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guests" class="control-label"></label>
+                <input asp-for="Guests" class="form-control" />
+                <span asp-validation-for="Guests" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateTime" class="control-label"></label>
+                <input asp-for="DateTime" class="form-control" />
+                <span asp-validation-for="DateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
