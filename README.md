@@ -14,3 +14,9 @@ Validation and Verification before deployment. Use Unit Test to test some use ca
 Azure Web application and Azure SQL database for managing Deployment.
 
 Authentication & Authorization: Different account roles: Member, Admin. Member can make reservations, admin level for manager can also schedule and manage sitting tables, assign account and view reports.
+
+## ScreenShots:
+![](/img/img1.png)
+![](/img/img2.png)
+![](/img/img3.png)
+![](/img/img4.png)
