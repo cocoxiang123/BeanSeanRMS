@@ -17,14 +17,16 @@ Authentication & Authorization: Different account roles: Member, Admin. Member c
 
 ## ScreenShots:
 
-### index.html
+### Index.html
 ![](/img/img1.png)
 
-### booking
+### Booking
 ![](/img/img2.png)
 
-### login
+### Menu
+![](/img/img5.png)
+### Login
 ![](/img/img3.png)
 
-### monthly report
+### Monthly report
 ![](/img/img4.png)
