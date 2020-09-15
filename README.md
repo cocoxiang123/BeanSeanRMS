@@ -16,7 +16,15 @@ Azure Web application and Azure SQL database for managing Deployment.
 Authentication & Authorization: Different account roles: Member, Admin. Member can make reservations, admin level for manager can also schedule and manage sitting tables, assign account and view reports.
 
 ## ScreenShots:
+
+### index.html
 ![](/img/img1.png)
+
+### booking
 ![](/img/img2.png)
+
+### login
 ![](/img/img3.png)
+
+### monthly report
 ![](/img/img4.png)
