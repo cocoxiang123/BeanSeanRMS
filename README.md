@@ -1,7 +1,7 @@
 # BeanSeanRMS
 link: https://t4rms.azurewebsites.net/
 
-##Restaurant Management System web application
+## Restaurant Management System web application
 
 Using C# language to build Asp.net MVC web application, EF Core to connect to SQL database. 
 
